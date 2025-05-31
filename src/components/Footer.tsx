@@ -6,7 +6,6 @@ import { Github, Linkedin, Mail, FileText, Heart, ArrowUp } from 'lucide-react';
 interface FooterProps {
     personalData: {
         name: string;
-        email: string;
         linkedin: string;
         github: string;
         medium: string;
@@ -24,7 +23,6 @@ export default function Footer({ personalData }: FooterProps) {
         { icon: Github, href: personalData.github, label: 'GitHub' },
         { icon: Linkedin, href: personalData.linkedin, label: 'LinkedIn' },
         { icon: FileText, href: personalData.medium, label: 'Medium' },
-        { icon: Mail, href: `mailto:${personalData.email}`, label: 'Email' },
     ];
 
     const quickLinks = [

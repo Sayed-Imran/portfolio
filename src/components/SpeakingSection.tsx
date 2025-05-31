@@ -198,7 +198,7 @@ export default function SpeakingSection({ events }: SpeakingSectionProps) {
                             Kubernetes, Cloud technologies, and digital transformation.
                         </p>
                         <motion.a
-                            href="mailto:your.email@example.com?subject=Speaking Opportunity"
+                            href="#contact"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium shadow-lg hover:shadow-cyan-500/25"

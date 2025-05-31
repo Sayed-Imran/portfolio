@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 interface ContactSectionProps {
     personalData: {
-        email: string;
         linkedin: string;
         github: string;
         medium: string;
@@ -89,7 +88,7 @@ export default function ContactSection({ personalData }: ContactSectionProps) {
 
                             <div className="space-y-6">
                                 <div className="text-gray-300">
-                                    <p className="mb-4">I use Topmate to schedule meetings, consultations, and mentorship sessions without sharing my email address.</p>
+                                    <p className="mb-4">I use Topmate to schedule meetings, consultations, and mentorship sessions directly.</p>
                                     <p className="mb-6">Book a time slot that works for you, and let's connect to discuss your project, answer your questions, or explore collaboration opportunities.</p>
                                 </div>
 

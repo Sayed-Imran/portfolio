@@ -30,8 +30,8 @@ export default function Navigation() {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-slate-900/90 backdrop-blur-md border-b border-cyan-500/20'
-                    : 'bg-transparent'
+                ? 'bg-slate-900/90 backdrop-blur-md border-b border-cyan-500/20'
+                : 'bg-transparent'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,13 +88,7 @@ export default function Navigation() {
                         >
                             <FileText size={20} />
                         </motion.a>
-                        <motion.a
-                            href="mailto:your.email@example.com"
-                            whileHover={{ scale: 1.1, y: -2 }}
-                            className="text-gray-400 hover:text-cyan-400 transition-colors"
-                        >
-                            <Mail size={20} />
-                        </motion.a>
+                        {/* Email link removed */}
                     </div>
 
                     {/* Mobile menu button */}
@@ -152,12 +146,7 @@ export default function Navigation() {
                                 >
                                     <FileText size={20} />
                                 </a>
-                                <a
-                                    href="mailto:your.email@example.com"
-                                    className="text-gray-400 hover:text-cyan-400 transition-colors"
-                                >
-                                    <Mail size={20} />
-                                </a>
+                                {/* Email link removed */}
                             </div>
                         </div>
                     </motion.div>
