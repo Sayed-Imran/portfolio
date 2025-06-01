@@ -21,10 +21,14 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
     useEffect(() => {
         scrollMotionValue.set(scrollY);
     }, [scrollY, scrollMotionValue]);
+
+    // Base URL for GitHub raw content
+    const baseUrl = 'https://raw.githubusercontent.com/sayed-imran/portfolio/main/public/logos';
+
     const logos = useMemo(() => [
         // Priority logos - visible on first page load
         {
-            src: '/logos/google-cloud-icon-2048x1646-7admxejz.png',
+            src: `${baseUrl}/google-cloud-icon-2048x1646-7admxejz.png`,
             alt: 'Google Cloud',
             scale: 280,
             position: { x: -25, y: -15 },
@@ -32,7 +36,7 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
             priority: true
         },
         {
-            src: '/logos/Kubernetes_logo_without_workmark.svg.png',
+            src: `${baseUrl}/Kubernetes_logo_without_workmark.svg.png`,
             alt: 'Kubernetes',
             scale: 280,
             position: { x: 25, y: -15 },
@@ -40,7 +44,7 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
             priority: true
         },
         {
-            src: '/logos/Amazon_Web_Services_Logo.svg.png',
+            src: `${baseUrl}/Amazon_Web_Services_Logo.svg.png`,
             alt: 'AWS',
             scale: 280,
             position: { x: 0, y: 20 },
@@ -49,7 +53,7 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
         },
         // Secondary logos - make some secondary logos visible early too
         {
-            src: '/logos/docker-mark-blue.png',
+            src: `${baseUrl}/docker-mark-blue.png`,
             alt: 'Docker',
             scale: 260,
             position: { x: 25, y: -55 },
@@ -57,7 +61,7 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
             priority: true // Make Docker visible early
         },
         {
-            src: '/logos/azure.png',
+            src: `${baseUrl}/azure.png`,
             alt: 'Azure',
             scale: 240,
             position: { x: -60, y: -30 },
@@ -65,34 +69,34 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
             priority: true // Make Azure visible early
         },
         {
-            src: '/logos/istio-logo-icon-342x512-gh5boo0w.png',
+            src: `${baseUrl}/istio-logo-icon-342x512-gh5boo0w.png`,
             alt: 'Istio',
             scale: 220,
             position: { x: 60, y: -20 },
             rotation: -25
         },
         {
-            src: '/logos/Linux.png',
+            src: `${baseUrl}/Linux.png`,
             alt: 'Linux',
             scale: 250,
             position: { x: -20, y: 60 },
             rotation: 10
         },
         {
-            src: '/logos/Jenkins_logo.svg.png',
+            src: `${baseUrl}/Jenkins_logo.svg.png`,
             alt: 'Jenkins',
             scale: 200,
             position: { x: 55, y: -45 },
             rotation: -20
         },
         {
-            src: '/logos/github-logo.png',
+            src: `${baseUrl}/github-logo.png`,
             alt: 'GitHub',
             scale: 180,
             position: { x: -55, y: -60 },
             rotation: 25
         }
-    ], []);
+    ], [baseUrl]);
 
     return (
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -181,6 +185,7 @@ export default function BackgroundLogos({ scrollY }: BackgroundLogosProps) {
                                 className="object-contain transition-all duration-500 ease-out"
                                 loading={logo.priority ? "eager" : "lazy"}
                                 priority={logo.priority}
+                                unoptimized={true} // Add this to bypass Next.js image optimization for external URLs
                             />
                         </motion.div>
                     </motion.div>
